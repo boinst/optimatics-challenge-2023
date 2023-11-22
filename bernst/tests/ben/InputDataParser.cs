@@ -1,4 +1,4 @@
-namespace tests;
+namespace tests.ben;
 
 /// <summary>
 /// It parses the input data.
