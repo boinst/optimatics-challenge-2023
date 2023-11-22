@@ -69,12 +69,33 @@ public class PassADay : code.PassADay
         CollectionAssert.AreEqual(new int[] { 6, 0, 6, 4, 5, 6, 0, 1, 1, 2, 6, 0, 1, 1, 1, 2, 2, 3, 3, 4, 6, 7, 8, 8, 8, 8 }, expectedFishes);
     }
 
-    
-    // after 80 days, 
+
+    // after 80 days, there would be a total of 5934.
     [TestMethod]
     public void after80Day()
     {
- }
+        int[] fishes = new int[] { 3, 4, 3, 1, 2 };
+
+        var expectedFishes = passDays(80, fishes);
+
+        int number = count(expectedFishes);
+
+        Assert.AreEqual(5934, number);
+   
+    }
+
+        [TestMethod]
+    public void afterSomeDay()
+    {
+        int[] fishes = new int[] { 3, 4, 3, 1, 2 };
+
+        var expectedFishes = passDays(256, fishes);
+
+        int number = count(expectedFishes);
+
+        Assert.AreEqual(26984457539, number);
+   
+    }
 
 
 }

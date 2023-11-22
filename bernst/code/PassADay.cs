@@ -43,4 +43,10 @@ public class PassADay
 
         return fishes;
     }
+
+        public static int count ( int[] fishes)
+    {
+
+        return fishes.Length;
+    }
 }
