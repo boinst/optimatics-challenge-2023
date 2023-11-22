@@ -18,4 +18,18 @@ public class BusinessLogicTests
         var expected = new[] { 2 };
         CollectionAssert.AreEqual(expected, stateAfterOneDay);
     }
+
+    // After another day, its internal timer would become 1.
+    [TestMethod]
+    public void SecondBusinessRule()
+    {
+        var startState = new[] { 2 };
+        
+        // After the second day
+        var stateAfterTheSecondDay = new tests.ben.BusinessLogic().OneDayPasses(startState).ToArray();
+
+        // its internal timer would become 1.
+        var expected = new[] { 1 };
+        CollectionAssert.AreEqual(expected, stateAfterTheSecondDay);
+    }
 }
