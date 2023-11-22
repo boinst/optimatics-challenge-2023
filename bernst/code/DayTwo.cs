@@ -2,9 +2,9 @@ namespace code;
 
 public class DayTwo
 {
-    public static int[] dayTwo(int days, int[] fishes)
+    public static long[] dayTwo(int days, int[] fishes)
     {
-        var compressedFishes = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        var compressedFishes = new long[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         for (int i = 0; i < fishes.Length; i++)
         {
@@ -41,10 +41,10 @@ public class DayTwo
                     break;
             }
         }
+
         for (int j = 0; j < days; j++)
         {
-            int firstElement = compressedFishes[0];
-
+            long firstElement = compressedFishes[0];
             // each fish shifts a position after one day, from 8 to 0 reducing 1
             compressedFishes[0] = compressedFishes[1];
             compressedFishes[1] = compressedFishes[2];
@@ -52,20 +52,18 @@ public class DayTwo
             compressedFishes[3] = compressedFishes[4];
             compressedFishes[4] = compressedFishes[5];
             compressedFishes[5] = compressedFishes[6];
-            compressedFishes[6] = firstElement + compressedFishes[7]; // 0 becomes 6, state 7 becomes state 6
+            compressedFishes[6] = compressedFishes[7] + firstElement; // 0 becomes 6, state 7 becomes state 6
             compressedFishes[7] = compressedFishes[8]; // state 8 becomes state 7
             compressedFishes[8] = firstElement; // new state 8 from state 0
         }
-        
+
         return compressedFishes;
     }
 
-
-
-    public static int count(int[] fishes)
+    public static long count(long[] fishes)
     {
-        int sum = 0;
-        for (int i = 0; i < 9; i++)
+        long sum = 0;
+        for (int i = 0; i < fishes.Length; i++)
         {
             sum += fishes[i];
         }
