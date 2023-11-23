@@ -1,4 +1,4 @@
-namespace tests.ben;
+namespace tests.ben.Common;
 
 [TestClass]
 public class InputDataTests
@@ -6,9 +6,9 @@ public class InputDataTests
     [TestMethod]
     public void ParseInputData()
     {
-        var startData = "3,4,3,1,2";
+        var start_data = "3,4,3,1,2";
 
-        var parsed = new tests.ben.InputDataParser().Parse(startData);
+        var parsed = new InputDataParser().Parse(start_data);
 
         var expected = new[] { 3, 4, 3, 1, 2 };
 

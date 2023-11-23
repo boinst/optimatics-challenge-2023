@@ -106,7 +106,7 @@ public class PassADay : code.DayTwo
 
         long number = count(expectedFishes);
 
-        Assert.AreEqual(1, number);
+        Assert.AreEqual( 1740449478328, number);
 
     }
 
