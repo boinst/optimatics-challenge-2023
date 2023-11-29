@@ -4,7 +4,7 @@ namespace tests;
 public class InputHandlerTest : code.InputHandler
 {
     [TestMethod]
-    public void readInput()
+    public void readInputTest()
     {
         string input =
         @"123
