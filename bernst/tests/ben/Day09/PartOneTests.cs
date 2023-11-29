@@ -40,6 +40,24 @@ public class PartOneTests
 
         Assert.AreEqual(1, numberOfLowPoints);
     }
+    
+    /// <summary>
+    /// I have two points, one of them is a low point, but the
+    /// array is vertical now.
+    /// </summary>
+    [TestMethod]
+    public void CountLowPointsOfTwoPointsVertical()
+    {
+        var data = new[,]
+        {
+            { 0 }, 
+            { 1 }
+        };
+        var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
+        
+
+        Assert.AreEqual(1, numberOfLowPoints);
+    }
 
     /// <summary>
     /// I have an array of three data points, with two low points.
@@ -48,9 +66,9 @@ public class PartOneTests
     public void CountLowPointsInAnArrayOfThree()
     {
         var data = new[,] {{ 0, 3, 0 }};
-        var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
+        var number_of_low_points = BusinessLogicPartOne.CountLowPoints(data);
         
-        Assert.AreEqual(2, numberOfLowPoints);
+        Assert.AreEqual(2, number_of_low_points);
     }
     
     [TestMethod]
@@ -67,13 +85,41 @@ public class PartOneTests
     /// I have an array of three data points, with two low points.
     /// </summary>
     [TestMethod]
-    public void IsLowPoint()
+    public void IsLowPoint1D()
     {
+        // 
         var data = new[,] {{ 0 , 3, 0 }};
-       // var numberOfLowPoints = 
+
+
          
-       Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, 0));
-       Assert.IsFalse(BusinessLogicPartOne.IsLowPoint(data, 1));
-       Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, 2));
+       Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, new []{0, 0}));
+       Assert.IsFalse(BusinessLogicPartOne.IsLowPoint(data, new []{1, 0}));
+       Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, new []{2, 0}));
+    }
+
+    [TestMethod]
+    public void DimensionsOfArray()
+    {
+        var data = new[,] {{ 0, 3, 0 }};
+        Assert.AreEqual(2, BusinessLogicPartOne.Max_X_Index(data));
+        Assert.AreEqual(0, BusinessLogicPartOne.Max_Y_Index(data));
+        Assert.AreEqual(3, BusinessLogicPartOne.Length_X(data));
+        Assert.AreEqual(1, BusinessLogicPartOne.Length_Y(data));
+    }
+    
+    /// <summary>
+    /// I have an array of three data points, with two low points.
+    /// </summary>
+    [TestMethod]
+    public void IsLowPoint2D()
+    {
+        var data = new[,] {
+            { 0 , 3 }, 
+            { 3, 0}
+        };
+         
+        Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, new[] { 0, 0 }));
+        Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, new[] { 1, 1 }));
+        Assert.IsFalse(BusinessLogicPartOne.IsLowPoint(data, new[] { 1, 0 }));
     }
 }
