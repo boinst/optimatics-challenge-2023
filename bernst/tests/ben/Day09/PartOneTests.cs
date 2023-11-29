@@ -21,7 +21,7 @@ public class PartOneTests
     [TestMethod]
     public void SinglePoint()
     {
-        var data = new[] { 4 };
+        var data = new[,] { { 4 } };
         var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
         
 
@@ -34,7 +34,7 @@ public class PartOneTests
     [TestMethod]
     public void CountLowPointsOfTwoPoints()
     {
-        var data = new[] { 0, 1};
+        var data = new[,] {{ 0, 1 }};
         var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
         
 
@@ -47,11 +47,19 @@ public class PartOneTests
     [TestMethod]
     public void CountLowPointsInAnArrayOfThree()
     {
-        var data = new[] { 0 , 3, 0};
+        var data = new[,] {{ 0, 3, 0 }};
         var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
         
-
         Assert.AreEqual(2, numberOfLowPoints);
+    }
+    
+    [TestMethod]
+    public void CountLowPointsInAnArrayOfThree2()
+    {
+        var data = new[,] {{ 3, 0, 3 }};
+        var numberOfLowPoints = BusinessLogicPartOne.CountLowPoints(data);
+        
+        Assert.AreEqual(1, numberOfLowPoints);
     }
 
     
@@ -61,13 +69,11 @@ public class PartOneTests
     [TestMethod]
     public void IsLowPoint()
     {
-        var data = new[] { 0 , 3, 0};
+        var data = new[,] {{ 0 , 3, 0 }};
        // var numberOfLowPoints = 
          
        Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, 0));
        Assert.IsFalse(BusinessLogicPartOne.IsLowPoint(data, 1));
        Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, 2));
-            
-        
     }
 }

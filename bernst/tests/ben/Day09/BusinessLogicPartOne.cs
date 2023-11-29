@@ -12,7 +12,7 @@ public class BusinessLogicPartOne
     /// <summary>
     /// Count the number of low points in a given data set.
     /// </summary>
-    public static int CountLowPoints(int[] data)
+    public static int CountLowPoints(int[,] data)
     {
         var count = 0;
         for (int i = 0; i < data.Length; i++)
@@ -24,10 +24,10 @@ public class BusinessLogicPartOne
         return count;
     }
 
-    public static bool IsLowPoint(int[] data, int i)
+    public static bool IsLowPoint(int[,] data, int i)
     {
-        if (i > 0 && data[i - 1] < data[i]) return false;
-        if (i < data.Length - 1 && data[i + 1] < data[i]) return false;
+        if (i > 0 && data[0, i - 1] < data[0, i]) return false;
+        if (i < data.Length - 1 && data[0, i + 1] < data[0, i]) return false;
         return true;
     }
 }
