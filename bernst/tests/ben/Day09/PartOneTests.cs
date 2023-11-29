@@ -145,6 +145,23 @@ public class PartOneTests
         // x
         Assert.AreEqual(2, parsed.GetLength(1));
     }
+    /// <summary>
+    /// Two characters should parse to an array of two elements
+    /// </summary>
+    [TestMethod]
+    public void ParseInputDataSimpleTwoLines()
+    {
+        var parsed = BusinessLogicPartOne.ParseData("000\r\n111");
+        // y
+        Assert.AreEqual(2, parsed.GetLength(0)); 
+
+        // x
+        Assert.AreEqual(3, parsed.GetLength(1));
+        
+        // check the first and last values
+        Assert.AreEqual(0, parsed[0,0]);
+        Assert.AreEqual(1, parsed[1,2]);
+    }
 }
 
 public static class TestData
