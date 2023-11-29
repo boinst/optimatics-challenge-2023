@@ -27,12 +27,48 @@ public class CompareTest : code.Compare
         CollectionAssert.AreEqual(expected, actual);
     }
 
+    // 1D string
     [TestMethod]
-    public void iteratorTest()
+    public void iteratorTest1()
     {
         int[,] heightMap = { { 1, 2, 3 } };
         List<int> expected = new List<int> { 1 };
         List<int> actual = code.Compare.iterator(heightMap);
         CollectionAssert.AreEqual(expected, actual);
+    }
+
+    // 2D string
+    [TestMethod]
+    public void iteratorTest2()
+    {
+        int[,] heightMap = { { 1, 2, 3 } ,{0, 2, 4}};
+        List<int> expected = new List<int> { 0 };
+        List<int> actual = code.Compare.iterator(heightMap);
+        CollectionAssert.AreEqual(expected, actual);
+    }
+
+    // 2D string
+    [TestMethod]
+    public void iteratorTest3()
+    {
+        int[,] heightMap = code.InputHandler.readInput(
+            @"2199943210
+3987894921
+9856789892
+8767896789
+9899965678");
+        List<int> expected = new List<int> { 1,0,5,5 };
+        List<int> actual = code.Compare.iterator(heightMap);
+        CollectionAssert.AreEqual(expected, actual);
+    }
+
+    // get the sum 
+    [TestMethod]
+    public void sumTest()
+    {
+        List<int> lowPoints = new List<int> { 1,0,5,5};
+        int expected = 15;
+        int actual = code.Calculator.sum(lowPoints);
+        Assert.AreEqual(expected, actual);
     }
 }
