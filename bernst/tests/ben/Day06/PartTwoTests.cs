@@ -1,5 +1,5 @@
 ﻿using tests.ben.Common;
-using tests.ben.Day06;
+namespace tests.ben.Day06;
 
 [TestClass]
 public class PartTwoTests
