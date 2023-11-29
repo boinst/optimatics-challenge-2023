@@ -11,6 +11,18 @@ public class Compare
                 return false;
             }
         }
+        bool isEqualToAllNeighbors = true;
+        foreach (int neighbor in neighbors)
+        {
+            if (neighbor != currentPoint)
+            {
+                isEqualToAllNeighbors = false;
+            }
+        }
+        if (isEqualToAllNeighbors)
+        {
+            return false;
+        }
         return true;
     }
 

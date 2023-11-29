@@ -89,7 +89,7 @@ public class CompareTest : code.Compare
     }
 
         [TestMethod]
-    public void finalTestExample()
+    public void finalTest()
     {
         int[,] heightMap = code.InputHandler.readInput(
             @"4567894301299921298789654345689439843295436789543298765432345678986789756901239998765634567895986555
