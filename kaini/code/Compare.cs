@@ -46,7 +46,27 @@ public class Compare
             neighbors.Add(heightMap[row, col + 1]);
         }
 
-
         return neighbors;
+    }
+
+    public static List<int> iterator(int[,] heightMap)
+    {
+        int numRows = heightMap.GetLength(0);
+        int numCols = heightMap.GetLength(1);
+        List<int> result = new List<int>();
+
+        for (int row = 0; row < numRows; row++)
+        {
+            for (int col = 0; col < numCols; col++)
+            {
+                int currentPoint = heightMap[row, col];
+                int[] neighbors = getNeighbors(heightMap, row, col).ToArray();
+                if (isSmallest(currentPoint, neighbors))
+                {
+                    result.Add(currentPoint);
+                }
+            }
+        }
+        return result;
     }
 }

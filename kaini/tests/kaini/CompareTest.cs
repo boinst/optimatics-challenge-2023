@@ -26,4 +26,13 @@ public class CompareTest : code.Compare
         List<int> actual = code.Compare.getNeighbors(heightMap, row, col);
         CollectionAssert.AreEqual(expected, actual);
     }
+
+    [TestMethod]
+    public void iteratorTest()
+    {
+        int[,] heightMap = { { 1, 2, 3 } };
+        List<int> expected = new List<int> { 1 };
+        List<int> actual = code.Compare.iterator(heightMap);
+        CollectionAssert.AreEqual(expected, actual);
+    }
 }
