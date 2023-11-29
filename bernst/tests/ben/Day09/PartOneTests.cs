@@ -122,4 +122,32 @@ public class PartOneTests
         Assert.IsTrue(BusinessLogicPartOne.IsLowPoint(data, new[] { 1, 1 }));
         Assert.IsFalse(BusinessLogicPartOne.IsLowPoint(data, new[] { 1, 0 }));
     }
+
+    [TestMethod]
+    public void ParseInputDataSimple()
+    {
+        var parsed = BusinessLogicPartOne.ParseData("0");
+        Assert.AreEqual(1, parsed.GetLength(0));
+        Assert.AreEqual(1, parsed.GetLength(1));
+        Assert.AreEqual(0, parsed[0,0]);
+    }
+    
+    /// <summary>
+    /// Two characters should parse to an array of two elements
+    /// </summary>
+    [TestMethod]
+    public void ParseInputDataSimple2()
+    {
+        var parsed = BusinessLogicPartOne.ParseData("00");
+        // y
+        Assert.AreEqual(1, parsed.GetLength(0)); 
+
+        // x
+        Assert.AreEqual(2, parsed.GetLength(1));
+    }
+}
+
+public static class TestData
+{
+    public static string ExampleData => "2199943210\r\n3987894921\r\n9856789892\r\n8767896789\r\n9899965678";
 }

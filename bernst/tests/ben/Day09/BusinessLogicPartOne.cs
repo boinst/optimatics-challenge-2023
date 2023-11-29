@@ -104,4 +104,28 @@ public class BusinessLogicPartOne
     {
         return data.GetLength(index_of_y_dimension);
     }
+
+    /// <summary>
+    /// Parse the input data
+    /// </summary>
+    public static int[,] ParseData(string s)
+    {
+        var lines = s.Split("\r\n");
+        var n_lines = lines.Length;
+        var n_chars = lines[0].Length;
+
+        var result = new int[n_lines, n_chars];
+
+        for (var x = 0; x < n_chars; ++x)
+        for (var y = 0; y < n_lines; ++y)
+        {
+            var str_val = lines[y].ToCharArray()[x];
+            var str2_val = str_val.ToString();
+            var int_val = int.Parse(str2_val);
+
+            result[y, x] = int_val;
+        }
+
+        return result;
+    }
 }
