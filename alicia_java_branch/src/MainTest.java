@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
-
     @org.junit.jupiter.api.Test
     @DisplayName("Test split rows from input")
     void splitInput() {
@@ -30,7 +29,6 @@ class MainTest {
                        "402564"; // 0,0,4 are low points
         assertEquals(7, Main.iteratingMatrix(input));
     }
-
 
     @org.junit.jupiter.api.Test
     @DisplayName("Test iterating Matrix")
