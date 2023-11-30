@@ -177,7 +177,7 @@ public class PartOneTests
     /// Calculate the sum of risk levels across the height map, given example data.
     /// </summary>
     [TestMethod]
-    public void sum_of_risk_levels()
+    public void sumOfRiskLevels()
     {
         var parsed = BusinessLogicPartOne.ParseData(TestData.ExampleData);
         Assert.AreEqual(15, BusinessLogicPartOne.SumOfRiskLevelOfAllLowPoints(parsed));
