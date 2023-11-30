@@ -162,9 +162,24 @@ public class PartOneTests
         Assert.AreEqual(0, parsed[0,0]);
         Assert.AreEqual(1, parsed[1,2]);
     }
-}
 
-public static class TestData
-{
-    public static string ExampleData => "2199943210\r\n3987894921\r\n9856789892\r\n8767896789\r\n9899965678";
+    /// <summary>
+    /// Count the low points in the data set.
+    /// </summary>
+    [TestMethod]
+    public void Count_low_points()
+    {
+        var parsed = BusinessLogicPartOne.ParseData(TestData.ExampleData);
+        Assert.AreEqual(4, BusinessLogicPartOne.CountLowPoints(parsed));
+    }
+
+    /// <summary>
+    /// Calculate the sum of risk levels across the height map, given example data.
+    /// </summary>
+    [TestMethod]
+    public void sum_of_risk_levels()
+    {
+        var parsed = BusinessLogicPartOne.ParseData(TestData.ExampleData);
+        Assert.AreEqual(15, BusinessLogicPartOne.SumOfRiskLevelOfAllLowPoints(parsed));
+    }
 }

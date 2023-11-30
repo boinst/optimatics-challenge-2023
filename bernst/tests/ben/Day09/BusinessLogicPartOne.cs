@@ -10,9 +10,9 @@ public class BusinessLogicPartOne
     }
 
     /// <summary>
-    /// Count the number of low points in a given data set.
+    /// Enumerate the low points in the heightmap.
     /// </summary>
-    public static int CountLowPoints(int[,] data)
+    public static IEnumerable<int[]> enumerate_low_points(int[,] data)
     {
         // Index of the last element in the first dimension
         var x_max = Length_X(data);
@@ -20,17 +20,22 @@ public class BusinessLogicPartOne
         // Index of the last element in the second dimension
         var y_max = Length_Y(data);
 
-
-        var count = 0;
-
         for (var x = 0; x < x_max; ++x)
         for (var y = 0; y < y_max; ++y)
         {
-            if (IsLowPoint(data, new[] {x,y}))
-                ++count;
+            var candidate = new[] { x, y };
+            if (IsLowPoint(data, candidate))
+                yield return candidate;
         }
-        
-        return count;
+
+    }
+
+    /// <summary>
+    /// Count the number of low points in a given data set.
+    /// </summary>
+    public static int CountLowPoints(int[,] data)
+    {
+        return enumerate_low_points(data).Count();
     }
 
     
@@ -56,6 +61,10 @@ public class BusinessLogicPartOne
             var left_element = data[y, x - 1];
             if (left_element < element_under_test) 
                 return false;
+
+         //   if (left_element == element_under_test)
+        //        throw new Exception(
+        //            $"Unexpected! At coordinates ({x},{y}), the item to the left is identical to the element under test.");
         }
 
         // right element is smaller than the target element
@@ -127,5 +136,16 @@ public class BusinessLogicPartOne
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// Given a height map, cancl
+    /// </summary>
+    /// <param name="height_map"></param>
+    /// <returns></returns>
+    public static int SumOfRiskLevelOfAllLowPoints(int[,] height_map)
+    {
+        var low_points = enumerate_low_points(height_map);
+        return low_points.Sum(p => CalculateRiskLevel(height_map[p[1],p[0]]));
     }
 }
