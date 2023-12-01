@@ -1,4 +1,4 @@
-namespace tests.ben.Day06;
+namespace tests.ben.Y2021.Day06;
 
 /// <summary>
 /// This class captures the business logic for the problem
@@ -40,7 +40,7 @@ public class BusinessLogicPartTwo
         // decrement the internal counter for any other fish.
         for (var i = 1; i < 9; i++)
         {
-            new_state[i - 1] = old_state[i];   
+            new_state[i - 1] = old_state[i];
         }
 
         // Record the number of baby fish spawned
@@ -49,11 +49,11 @@ public class BusinessLogicPartTwo
 
         // And reset the parents, too
         new_state[6] += number_of_baby_fish;
-        
+
         return new_state;
     }
 
-    
+
     public ulong[] MultipleDaysPass(ulong[] initialState, int days)
     {
         var state = initialState.ToArray();

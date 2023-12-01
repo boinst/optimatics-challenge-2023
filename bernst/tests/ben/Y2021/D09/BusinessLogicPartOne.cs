@@ -1,6 +1,4 @@
-using System.Xml;
-
-namespace tests.ben.Day09;
+namespace tests.ben.Y2021.D09;
 
 public class BusinessLogicPartOne
 {
@@ -21,12 +19,12 @@ public class BusinessLogicPartOne
         var y_max = Length_Y(data);
 
         for (var x = 0; x < x_max; ++x)
-        for (var y = 0; y < y_max; ++y)
-        {
-            var candidate = new[] { x, y };
-            if (IsLowPoint(data, candidate))
-                yield return candidate;
-        }
+            for (var y = 0; y < y_max; ++y)
+            {
+                var candidate = new[] { x, y };
+                if (IsLowPoint(data, candidate))
+                    yield return candidate;
+            }
 
     }
 
@@ -38,7 +36,7 @@ public class BusinessLogicPartOne
         return enumerate_low_points(data).Count();
     }
 
-    
+
     private const int index_of_y_dimension = 0;
     private const int index_of_x_dimension = 1;
 
@@ -59,38 +57,38 @@ public class BusinessLogicPartOne
         if (x > 0)
         {
             var left_element = data[y, x - 1];
-            if (left_element < element_under_test) 
+            if (left_element < element_under_test)
                 return false;
 
-         //   if (left_element == element_under_test)
-        //        throw new Exception(
-        //            $"Unexpected! At coordinates ({x},{y}), the item to the left is identical to the element under test.");
+            //   if (left_element == element_under_test)
+            //        throw new Exception(
+            //            $"Unexpected! At coordinates ({x},{y}), the item to the left is identical to the element under test.");
         }
 
         // right element is smaller than the target element
         if (x < x_max)
         {
             var right_element = data[y, x + 1];
-            if (right_element < element_under_test) 
+            if (right_element < element_under_test)
                 return false;
         }
-        
+
         // element above is smaller than the target element
         if (y > 0)
         {
             var above_element = data[y - 1, x];
-            if (above_element < element_under_test) 
+            if (above_element < element_under_test)
                 return false;
         }
-        
+
         // element below is smaller than the target element
         if (y < y_max)
         {
             var below_element = data[y + 1, x];
-            if (below_element < element_under_test) 
+            if (below_element < element_under_test)
                 return false;
         }
-        
+
         return true;
     }
 
@@ -104,7 +102,7 @@ public class BusinessLogicPartOne
     {
         return data.GetLength(index_of_y_dimension) - 1;
     }
-    
+
     public static int Length_X(int[,] data)
     {
         return data.GetLength(index_of_x_dimension);
@@ -126,14 +124,14 @@ public class BusinessLogicPartOne
         var result = new int[n_lines, n_chars];
 
         for (var x = 0; x < n_chars; ++x)
-        for (var y = 0; y < n_lines; ++y)
-        {
-            var str_val = lines[y].ToCharArray()[x];
-            var str2_val = str_val.ToString();
-            var int_val = int.Parse(str2_val);
+            for (var y = 0; y < n_lines; ++y)
+            {
+                var str_val = lines[y].ToCharArray()[x];
+                var str2_val = str_val.ToString();
+                var int_val = int.Parse(str2_val);
 
-            result[y, x] = int_val;
-        }
+                result[y, x] = int_val;
+            }
 
         return result;
     }
@@ -146,6 +144,6 @@ public class BusinessLogicPartOne
     public static int SumOfRiskLevelOfAllLowPoints(int[,] height_map)
     {
         var low_points = enumerate_low_points(height_map);
-        return low_points.Sum(p => CalculateRiskLevel(height_map[p[1],p[0]]));
+        return low_points.Sum(p => CalculateRiskLevel(height_map[p[1], p[0]]));
     }
 }

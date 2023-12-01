@@ -1,4 +1,4 @@
-namespace tests.ben.Day06;
+namespace tests.ben.Y2021.Day06;
 
 [TestClass]
 public class PartOneTests
@@ -24,7 +24,7 @@ public class PartOneTests
     public void OneFishAfterTwoDays()
     {
         var start_state = new[] { 2 };
-        
+
         // After the second day
         var state_after_the_second_day = new BusinessLogicPartOne().OneDayPasses(start_state).ToArray();
 
@@ -32,13 +32,13 @@ public class PartOneTests
         var expected = new[] { 1 };
         CollectionAssert.AreEqual(expected, state_after_the_second_day);
     }
-    
+
     // After another day, its internal timer would become 1.
     [TestMethod]
     public void OneFishAfterThreeDays()
     {
         var start_state = new[] { 1 };
-        
+
         // After the second day
         var state_after_the_second_day = new BusinessLogicPartOne().OneDayPasses(start_state).ToArray();
 
@@ -47,13 +47,13 @@ public class PartOneTests
         CollectionAssert.AreEqual(expected, state_after_the_second_day);
     }
 
-    
+
     // After another day, its internal timer would become 1.
     [TestMethod]
     public void OneFishAfterTheFourthDay()
     {
         var start_state = new[] { 0 };
-        
+
         // After the second day
         var state_after_the_fourth_day = new BusinessLogicPartOne().OneDayPasses(start_state).ToArray();
 

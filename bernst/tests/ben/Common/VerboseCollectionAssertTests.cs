@@ -37,6 +37,7 @@ public class VerboseCollectionAssertTests
         try
         {
             VerboseCollectionAssert.AreEqualInternal(text_writer, a, b);
+            Assert.Fail("An exception should have been thrown");
         }
         catch (AssertFailedException)
         {

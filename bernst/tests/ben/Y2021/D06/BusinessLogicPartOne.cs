@@ -1,4 +1,4 @@
-namespace tests.ben.Day06;
+namespace tests.ben.Y2021.Day06;
 
 /// <summary>
 /// This class captures the business logic for the probelm
@@ -33,7 +33,7 @@ public class BusinessLogicPartOne
         }
     }
 
-    
+
     public IEnumerable<int> MultipleDaysPass(IEnumerable<int> initialState, int days)
     {
         var state = initialState.ToArray();
