@@ -18,5 +18,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::904EFD0E-785B-466C-9005-CB62F02E63A5::net8.0::tests.ben.Day09.PartOneTests.sumOfRiskLevels&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::904EFD0E-785B-466C-9005-CB62F02E63A5::net8.0::tests.ben.Y2023.D01.PartOneTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::904EFD0E-785B-466C-9005-CB62F02E63A5::net8.0::tests.ben.Y2023.D01.PartTwoTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
