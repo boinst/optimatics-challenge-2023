@@ -12,4 +12,9 @@ public class InputDataParser
             .Select(int.Parse)
             .ToArray();
     }
+
+    public static string[] ToLines(string testData)
+    {
+        return testData.Split("\r\n");
+    }
 }

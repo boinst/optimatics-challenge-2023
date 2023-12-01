@@ -17,5 +17,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f8a1901a_002D3651_002D439a_002D86db_002D959829956a41/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="sumOfRiskLevels" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::904EFD0E-785B-466C-9005-CB62F02E63A5::net8.0::tests.ben.Day09.PartOneTests.sumOfRiskLevels&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::904EFD0E-785B-466C-9005-CB62F02E63A5::net8.0::tests.ben.Y2023.D01.PartOneTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
